@@ -148,8 +148,8 @@ int main(int argc, char *argv[])
 			}
 			coStream.close();
 			coUpdateRow.close();
-		} catch (otl_exception coExept) {
-			LOG_E(coLog, "code: '%d'; message: '%s'; query: '%s';", __FUNCTION__, coExept.code, coExept.msg, coExept.stm_text);
+		} catch (otl_exception &coExept) {
+			LOG_E(coLog, "code: '%d'; message: '%s'; query: '%s';", coExept.code, coExept.msg, coExept.stm_text);
 			if (coStream.good())
 				coStream.close();
 			if (coUpdateRow.good())
